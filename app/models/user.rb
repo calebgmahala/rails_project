@@ -3,4 +3,8 @@ class User < ApplicationRecord
 	validates :username, presence: true
 	validates :team, presence: true
 	validates :permission, presence: true
+
+	def authenticate(provided_password)
+		self.password == provided_password
+	end
 end

@@ -3,8 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	user = User.find_by(username: params[:session][:username].downcase)
-  	if user && user.authenticate(params[:session][:password])
+  	@user = User.find_by(username: params[:session][:username])
+  	if @user && @user.authenticate(params[:session][:password])
+      session[:username] = @user.username
   		redirect_to @user
   	else
   		fail RuntimeError, "implemement failed login"

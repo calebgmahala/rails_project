@@ -10,10 +10,12 @@
   <%= @user.team %>
 </p>
 
+<% if session[:username].eql?(@user.username) %>
 <p>
   <strong>Password:</strong>
   <%= @user.password %>
 </p>
+<% end %>
 
 <p>
   <strong>Permission:</strong>
