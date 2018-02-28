@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Date:</strong>
+  <%= @event.date %>
+</p>
+
+<p>
   <strong>Time:</strong>
   <%= @event.time %>
 </p>
@@ -19,6 +24,7 @@
   <strong>People:</strong>
   <%= @event.people %>
 </p>
-
+<% if session[:permission] <= 1 %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
+<% end %>
 <%= link_to 'Back', events_path %>

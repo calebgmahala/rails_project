@@ -1,6 +1,10 @@
 <h1>Editing Event</h1>
-
+<% if session[:permission] <= 1 %>
 <%= render 'form', event: @event %>
 
 <%= link_to 'Show', @event %> |
 <%= link_to 'Back', events_path %>
+<% else %>
+  <h1>Path Unknown</h1>
+  <%= link_to 'Events', events_path %>
+<% end %>

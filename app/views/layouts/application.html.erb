@@ -9,6 +9,13 @@
   </head>
 
   <body>
+  	<% if session[:in] == true || current_page?(login_path) %>
     <%= yield %>
+    <% else %>
+    <h1>ERROR!</h1>
+    <p>You are not signed in!</p>
+    <%= link_to "Login", login_path %>
+    <% puts %>
+    <% end %>
   </body>
 </html>
