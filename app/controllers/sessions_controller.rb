@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   	if @user && @user.authenticate(params[:session][:password])
       session[:id] = @user.id
       session[:permission] = @user.permission
+      session[:in] = true
   		redirect_to @user
   	else
   		fail RuntimeError, "implemement failed login"
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:id)
     session.delete(:permission)
+    session.delete(:in)
     redirect_to login_path
   end
 end
