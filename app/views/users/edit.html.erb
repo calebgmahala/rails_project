@@ -1,4 +1,4 @@
-<% if session[:id].eql?(@user.id) %>
+<% if session[:id].eql?(@user.id) || session[:permission] == 0 %>
   <h1>Editing User</h1>
 
   <%= render 'form', user: @user %>
