@@ -1,4 +1,5 @@
 <% if session[:permission] == 0 %>
+<div class="loginForm">
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -21,8 +22,9 @@
     <%= form.submit %>
   </div>
 <% end %>
-
+</div>
 <% else %>
+<div class="loginForm">
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -43,7 +45,7 @@
 
   <div class="field">
     <%= form.label :team %>
-    <%= form.text_field :team, id: :user_team %>
+    <%= form.collection_select(:team_id, Team.all, :id, :name) %>
   </div>
 
   <div class="field">
@@ -55,5 +57,5 @@
     <%= form.submit %>
   </div>
 <% end %>
-
+</div>
 <% end %>

@@ -1,3 +1,38 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	background: linear-gradient(120deg, white, lightgrey);
+	background-size: 100vw 100vh;
+}
+.header {
+	height: 60px;
+	width: 100%;
+	background: linear-gradient(120deg, maroon, black 80%);
+	color: white;
+	font-size: 40px;
+	font-family: Courier;
+	font-weight: bold;
+	padding-left: 70px;
+	padding-top: 20px;
+	margin-bottom: 10px;
+}
+.loginForm {
+	label {
+		font-size: 20px;
+		font-family: Courier;
+		margin-left: 10px;
+	}
+	input {
+		display: block;
+		margin: 10px 0px 10px 20px;
+		font-size: 20px;
+		font-family: Sans-Serif;
+
+	}
+}
+.linkExtrude {
+		font-size: 20px;
+		font-family: Courier;
+		margin-left: 10px;
+	}
