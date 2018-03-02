@@ -2,12 +2,12 @@
 
 one:
   username: MyString
+  password: 
   team: MyString
-  password: MyString
   permission: 1
 
 two:
   username: MyString
+  password: 
   team: MyString
-  password: MyString
   permission: 1
