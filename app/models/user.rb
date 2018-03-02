@@ -5,9 +5,9 @@ class User < ApplicationRecord
 
 	after_initialize :set_permission
 
-	def authenticate(provided_password)
-		self.password == provided_password
-	end
+	# def authenticate(provided_password)
+	# 	self.password == provided_password
+	# end
 	def set_permission
 		self.permission ||= 2
 	end
