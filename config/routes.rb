@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  resources :users
   resources :events
   get 'sessions/new'
 
-  resources :users
   get    '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  root 'sessions#new'
+  root :to => redirect('/login')
 end
