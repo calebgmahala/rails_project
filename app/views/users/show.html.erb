@@ -6,19 +6,30 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
   <strong>Team:</strong>
   <%= @user.team %>
 </p>
 
+<% if session[:id].eql?(@user.id) %>
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+<% end %>
+
 <p>
   <strong>Permission:</strong>
-  <%= @user.permission %>
+  <% if @user.permission == 0 %>
+    Owner
+  <% elsif @user.permission == 1 %>
+    Admin
+  <% else %>
+    Member
+  <% end %>
 </p>
 
+<% if session[:id].eql?(@user.id) %>
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% end %>
+<%= link_to 'Home', events_path %>  |
+<%= link_to 'People', users_path %>
