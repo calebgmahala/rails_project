@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	belongs_to :team
 	validates :username, presence: true
 	validates :team, presence: true
 	validates :permission, presence: true
